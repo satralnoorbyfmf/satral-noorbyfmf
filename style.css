@@ -1,44 +1,121 @@
-:root { --green: #003a2b; --gold: #d4af37; }
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
-body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; }
+:root {
+    --bg-green: #003a2b; 
+    --gold: #d4af37;
+    --white: #ffffff;
+}
 
-.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
-header { background: var(--green); color: var(--gold); padding: 10px; text-align: center; }
-.header-top { display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: auto; padding: 0 10px; }
-.main-logo { width: 55px; height: 55px; border-radius: 50%; border: 1px solid var(--gold); }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.search-box { margin: 10px auto; max-width: 400px; }
-.search-box input { width: 90%; padding: 8px; border-radius: 20px; border: none; outline: none; }
+body {
+    background-color: var(--bg-green);
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* কন্টেন্ট সাজানোর জন্য */
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    overflow-x: hidden;
+    position: relative; /* ফুটার পজিশনের জন্য */
+}
 
-.social-links { margin: 10px 0; }
-.social-links a { color: var(--gold); margin: 0 8px; font-size: 18px; text-decoration: none; }
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: all 1.2s ease-out;
+    padding: 40px 0 100px 0; /* নিচে জায়গা রাখা হয়েছে ফুটারের জন্য */
+}
 
-.nav-bar { display: flex; overflow-x: auto; gap: 5px; justify-content: center; padding: 5px; }
-.nav-bar button { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 5px 12px; border-radius: 15px; cursor: pointer; white-space: nowrap; font-size: 13px; }
-.adm-btn { background: var(--gold) !important; color: var(--green) !important; font-weight: bold; }
+.main-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--gold); 
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-.content { flex: 1; padding: 15px; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1200px; margin: auto; }
-.product-card { background: white; border-radius: 10px; padding: 10px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: relative; }
-.product-card img { width: 100%; height: 230px; object-fit: cover; border-radius: 5px; }
+h1 {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
 
-.badge { position: absolute; top: 5px; left: 5px; font-size: 10px; padding: 3px 7px; border-radius: 3px; color: white; }
-.in-stock { background: #28a745; }
-.out-stock { background: #dc3545; }
+.tagline {
+    font-size: 1rem;
+    margin-bottom: 35px;
+    font-style: italic;
+    opacity: 0.9;
+    line-height: 1.4;
+}
 
-.price { color: var(--green); font-weight: bold; margin: 5px 0; }
-.size-btn { padding: 3px 6px; margin: 2px; border: 1px solid #ddd; background: #fff; font-size: 11px; cursor: pointer; }
-.size-btn.active { background: var(--green); color: white; }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
 
-.buy-btn { background: var(--green); color: var(--gold); border: none; width: 100%; padding: 10px; border-radius: 5px; margin-top: 8px; cursor: pointer; font-weight: bold; }
+.social-links a {
+    color: var(--gold);
+    font-size: 20px;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
 
-/* Footer - একদম নিচে রাখার জন্য */
-.site-footer { text-align: center; padding: 15px; background: #fff; border-top: 1px solid #ddd; width: 100%; }
-.trademark { font-size: 11px; margin: 0; color: #555; }
-.designer { font-size: 9px; margin: 2px 0 0 0; color: #888; }
+.social-links a:hover {
+    background-color: var(--gold);
+    color: var(--bg-green);
+    transform: translateY(-5px);
+}
 
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-.modal-content { background: white; margin: 15% auto; padding: 20px; width: 85%; max-width: 350px; border-radius: 10px; position: relative; }
-.close { position: absolute; right: 15px; top: 10px; font-size: 20px; cursor: pointer; }
-                                                                                                                     
+/* ফুটার স্টাইল (একদম নিচে এবং ছোট করে) */
+.footer {
+    position: absolute;
+    bottom: 15px; /* একদম পাতার নিচে */
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.copyright {
+    font-size: 0.7rem; /* লেখা অনেক ছোট করা হয়েছে */
+    color: var(--gold);
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.developer {
+    font-size: 0.65rem; /* লেখা অনেক ছোট করা হয়েছে */
+    opacity: 0.6;
+    text-transform: lowercase; /* স্টাইলিশ লুকের জন্য */
+}
+
+.developer b {
+    color: var(--gold);
+    font-weight: normal;
+}
+
+@media (max-width: 480px) {
+    .main-logo { width: 170px; height: 170px; }
+    h1 { font-size: 1.4rem; }
+    .tagline { font-size: 0.9rem; }
+    .footer { bottom: 10px; }
+}
