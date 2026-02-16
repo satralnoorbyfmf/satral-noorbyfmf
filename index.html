@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satr Al-Noor By FMF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <h1>Satr Al-Noor By FMF</h1>
+            <img src="logo.jpg" alt="Logo" class="main-logo">
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Search Pakistani, Bangladeshi, Inspired...">
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/18JphdWFK3/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/8801973797003" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+8801973797003"><i class="fa fa-phone"></i></a>
+        </div>
+
+        <nav class="nav-bar">
+            <button onclick="fetchData('All')">Home</button>
+            <button onclick="fetchData('Pakistani')">Pakistani</button>
+            <button onclick="fetchData('Pakistani Inspired')">Pakistani Inspired</button>
+            <button onclick="fetchData('Bangladeshi')">Bangladeshi</button>
+            <button class="adm-btn" onclick="openAdmin()">Admin Panel</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="product-grid" class="product-grid">
+            </div>
+    </main>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: green;">✔ Order Successful!</h2>
+            <p>আপনার অর্ডারটি গ্রহণ করা হয়েছে। আমরা শীঘ্রই যোগাযোগ করবো।</p>
+            <button class="confirm-btn" onclick="closeSuccess()">OK</button>
+        </div>
+    </div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="order-form"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p class="trademark">Satr Al-Noor By FMF 2026©</p>
+        <p class="designer">website designed by Syed Nurul Absar</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
+  
