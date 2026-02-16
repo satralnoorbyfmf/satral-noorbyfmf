@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satr Al-Noor By FMF | Online Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="brand">
+                <h1>Satr Al-Noor By FMF</h1>
+            </div>
+            <img src="logo.jpg" alt="Logo" class="main-logo">
+        </div>
+
+        <div class="search-area">
+            <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Search Pakistani, Indian, Bangladeshi Dresses...">
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/18JphdWFK3/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/satr_alnoorbyfmf" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@satr.alnoor.by.fm" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@SatrAl-NoorByFMF" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:satralnoorbyfmf@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="https://wa.me/8801973797003" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+8801973797003"><i class="fa fa-phone"></i></a>
+        </div>
+
+        <nav class="cat-nav">
+            <button onclick="fetchData('All')">Home</button>
+            <button onclick="fetchData('Pakistani')">Pakistani</button>
+            <button onclick="fetchData('Indian')">Indian</button>
+            <button onclick="fetchData('Bangladeshi')">Bangladeshi</button>
+            <button class="admin-link" onclick="checkAdmin()">Admin Panel</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="product-grid" class="product-grid">
+            </div>
+    </div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="order-form-container"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Satr Al-Noor By FMF 2026©</p>
+        <p>Made By <b>Syed Nurul Absar</b></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
